@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+pre {
+  color: dimgray;
+  font-size: 1rem;
+}
+
+.correct {
+  font-weight: bold;
+  color: green;
+}
+
+.wrong {
+  font-weight: bold;
+  color: darkred;
+}
+
+.current {
+  border: 1px solid black;
+  color: black;
+}
