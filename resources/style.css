@@ -11,7 +11,7 @@ main {
 
 pre {
   color: dimgray;
-  font-size: 1rem;
+  font-size: 1rem;  
 }
 
 .correct {
@@ -25,6 +25,7 @@ pre {
 }
 
 .current {
-  border: 1px solid black;
-  color: black;
+  color: white;
+  background: gray;
+  border: 1px solid gray;
 }
