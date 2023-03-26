@@ -1,10 +1,11 @@
 const userInput = [];
+const sourceCodePre = document.getElementById("source-code");
 let sourceCodeArr;
 
 fetch("https://raw.githubusercontent.com/koraytugay/selfie/main/src/index.js")
-.then(value => value.text())
-.then(value => {
-  sourceCodeArr = value.split("");
+.then(response => response.text())
+.then(responseText => {
+  sourceCodeArr = responseText.split("");
   redraw();
 });
 
@@ -35,12 +36,12 @@ function getSourceCodeCharSpan(i) {
 }
 
 function redraw() {
-  document.getElementById("source-code").innerHTML = "";
+  sourceCodePre.innerHTML = "";
 
   for (const sourceCodeChar of sourceCodeArr) {
     const sourceCodeCharSpan = document.createElement("span");
     sourceCodeCharSpan.innerText = sourceCodeChar;
-    document.getElementById("source-code").appendChild(sourceCodeCharSpan);
+    sourceCodePre.appendChild(sourceCodeCharSpan);
   }
 
   for (let i = 0; i < userInput.length; i++) {

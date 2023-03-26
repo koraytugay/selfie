@@ -11,21 +11,27 @@ main {
 
 pre {
   color: dimgray;
-  font-size: 1rem;  
+  font-size: 1rem;
 }
 
 .correct {
-  font-weight: bold;
   color: green;
 }
 
 .wrong {
-  font-weight: bold;
   color: darkred;
 }
 
 .current {
   color: white;
   background: gray;
-  border: 1px solid gray;
+  outline: 1px solid gray;
+}
+
+span {
+  padding-right: 1px;
+  padding-left: 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 20px;
 }
