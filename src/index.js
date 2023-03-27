@@ -50,12 +50,8 @@ function redraw() {
     if (sourceCodeCharSpan.textContent === userInput[i]) {
       sourceCodeCharSpan.classList.add("correct");
     } else {
-      // if we do not have this, wrongly entered space characters
-      // are not shown..
-      // if we use print user intput directly, then a wrongly entered
-      // space instead of a non-space character is not shown
       if (sourceCodeCharSpan.innerText === " ") {
-        sourceCodeCharSpan.innerText = userInput[i];
+        sourceCodeCharSpan.style.backgroundColor = "darkred";
       }
       sourceCodeCharSpan.classList.add("wrong");
     }
