@@ -1,4 +1,3 @@
-// start typing
 const sourceCodePre = document.getElementById("source-code");
 
 // fetch the code to be typed by the user
