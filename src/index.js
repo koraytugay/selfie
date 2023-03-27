@@ -1,7 +1,7 @@
-const userInput = [];
 const sourceCodePre = document.getElementById("source-code");
-let sourceCodeArr;
 
+// fetch the code to be typed by the user
+let sourceCodeArr;
 fetch("https://raw.githubusercontent.com/koraytugay/selfie/main/src/index.js")
 .then(response => response.text())
 .then(responseText => {
@@ -9,18 +9,23 @@ fetch("https://raw.githubusercontent.com/koraytugay/selfie/main/src/index.js")
   redraw();
 });
 
-document.addEventListener("keydown", (e) => {
+// store user input as an array of input characters
+const userInput = [];
+document.addEventListener("keydown", e => {
   if (e.key === " ") {
-    e.preventDefault();
+    e.preventDefault();  // prevent scroll down
   }
 
   if (e.key === "Meta" || e.key === "Shift") {
-    // ignore
-  } else if (e.key === "Backspace") {
+    return;  // not interesting for us
+  }
+
+  if (e.key === "Backspace") {
     userInput.pop();
   } else if (e.key === "Enter") {
     userInput.push("\n");
     // fast forward all whitespace and new line until next character
+    // this gives an IDE feeling to the user
     while ([" ", "\n"].includes(sourceCodeArr[userInput.length])) {
       userInput.push(sourceCodeArr[userInput.length]);
     }
